@@ -40,11 +40,11 @@ class Mover {
                 this.curY = event.clientY;
                 event.stopPropagation();
             });
-            this.obj.addEventListener('mouseup', (event)=> {
+            document.addEventListener('mouseup', (event)=> {
                 this.isClicked = false;
                 event.stopPropagation();
             });
-            this.obj.addEventListener('mousemove', (event)=> {
+            document.addEventListener('mousemove', (event)=> {
                 if (this.isClicked) {
                     var diff_x = event.clientX - this.curX;
                     var diff_y = event.clientY - this.curY;
