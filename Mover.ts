@@ -68,12 +68,12 @@ class Mover {
                 event.stopPropagation();
             });
             this.obj.addEventListener('touchmove', (event)=> {
-                event.preventDefault();
+                event.preventDefault(); // 修复在安卓uc浏览器上,只能触发一次touchmove的问题
                 if (this.isTouched) {
-                    var diff_x = event.touches[0].clientX - this.curX;
-                    var diff_y = event.touches[0].clientY - this.curY;
-                    this.curX  = event.touches[0].clientX;
-                    this.curY  = event.touches[0].clientY;
+                    var diff_x = event.targetTouches[0].clientX - this.curX;
+                    var diff_y = event.targetTouches[0].clientY - this.curY;
+                    this.curX  = event.targetTouches[0].clientX;
+                    this.curY  = event.targetTouches[0].clientY;
                     this.obj.style.left = parseFloat(this.obj.style.left) + diff_x + 'px';
                     this.obj.style.top = parseFloat(this.obj.style.top) + diff_y + 'px';
                 }

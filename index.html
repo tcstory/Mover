@@ -6,23 +6,36 @@
     <script src="Mover.js"></script>
     <title></title>
     <style>
-        div {
+        #test1 {
             position: absolute;
             width: 50px;
             height: 50px;
             background-color: aqua;
             left: 50px;
         }
+
+        #test2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: royalblue;
+            left: 150px;
+        }
     </style>
 </head>
 <body>
-    <div></div>
-    <script>
-        var div = document.querySelector('div');
-        var m = new Mover(div);
-        m.init();
-//        m.binds('mouse');
-        m.binds('touch')
-    </script>
+<div id="test1"></div>
+<div id="test2"></div>
+<script>
+    var div1 = document.querySelector('#test1');
+    var div2 = document.querySelector('#test2');
+    var m = new Mover(div1);
+    m.init();
+    //        m.binds('mouse');
+    m.binds('touch');
+    var n = new Mover(div2);
+    n.init();
+    n.binds('touch')
+</script>
 </body>
 </html>
