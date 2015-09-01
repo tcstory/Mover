@@ -3,6 +3,7 @@
 
 ### 使用方法
 
+请先把要移动的元素的定位设置成`position:absolute`
 ```
 var div = document.querySelector('#test');
 var m = new Mover(div);
