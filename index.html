@@ -2,7 +2,7 @@
 <html>
 <head lang="zh-CN">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <script src="Mover.js"></script>
     <title></title>
     <style>
@@ -21,21 +21,33 @@
             background-color: royalblue;
             left: 150px;
         }
+        #test3 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            left: 250px;
+        }
     </style>
 </head>
 <body>
 <div id="test1"></div>
 <div id="test2"></div>
+<div id="test3"></div>
 <script>
     var div1 = document.querySelector('#test1');
     var div2 = document.querySelector('#test2');
+    var div3 = document.querySelector('#test3');
     var m = new Mover(div1);
     m.init();
     //        m.binds('mouse');
     m.binds('touch');
     var n = new Mover(div2);
     n.init();
-    n.binds('touch')
+    n.binds('touch');
+    var j = new Mover(div3);
+    j.init();
+    j.binds('touch')
 </script>
 </body>
 </html>

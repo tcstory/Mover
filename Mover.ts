@@ -59,8 +59,8 @@ class Mover {
         } else if (type === 'touch') {
             this.obj.addEventListener('touchstart', (event)=> {
                 this.isTouched = true;
-                this.curX = event.touches[0].clientX;
-                this.curY = event.touches[0].clientY;
+                this.curX = event.targetTouches[0].clientX;
+                this.curY = event.targetTouches[0].clientY;
                 event.stopPropagation();
             });
             this.obj.addEventListener('touchend', (event)=> {
@@ -77,9 +77,7 @@ class Mover {
                     this.obj.style.left = parseFloat(this.obj.style.left) + diff_x + 'px';
                     this.obj.style.top = parseFloat(this.obj.style.top) + diff_y + 'px';
                 }
-
             })
         }
     }
 }
-
